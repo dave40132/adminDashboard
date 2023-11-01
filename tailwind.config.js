@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        light_blue: '#38bdf8'    
+        Encycolorpedia : '#46A3FF',
+        Lime_Green: '#00DB00'
       },
     },
   plugins: [],

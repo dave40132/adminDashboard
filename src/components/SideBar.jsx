@@ -1,11 +1,32 @@
 const SiderBar = () => {
+    const Menus = [
+        { icon: '/src/assets/dashboard.svg', title: '主控台', href: 'https://www.google.com.tw/?hl=zh_TW' },
+        { icon: '/src/assets/user.svg', title: '用戶資料', href: 'https://www.google.com.tw/?hl=zh_TW' },
+        { icon: '/src/assets/history.svg', title: '歷史紀錄', href: 'https://www.google.com.tw/?hl=zh_TW' },
+        { icon: '/src/assets/notification.svg', title: '通知', href: 'https://www.google.com.tw/?hl=zh_TW' },
+        { icon: '/src/assets/setting.svg', title: '設定', href: 'https://www.google.com.tw/?hl=zh_TW' },
+        { icon: '/src/assets/logout.svg', title: '登出', href: 'https://www.google.com.tw/?hl=zh_TW' }
+    ]
     return (
-        <div className="fixed top-0 left-0 h-screen w-72 m-0 
-                        flex flex-col ">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10">
-                <path fill-rule="evenodd" d="M3 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 5.25zm0 4.5A.75.75 0 013.75 9h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 9.75zm0 4.5a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75zm0 4.5a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
-            </svg>
-
+        <div className="fixed top-0 left-0 h-screen w-60 m-0
+                        flex flex-col
+                        bg-Encycolorpedia text-white">
+            <div className="flex gap-x-4 items-center bg-zinc-600 ">
+                <img src="./src/assets/adminicon.svg" className="cursor-pointer duration-300 w-10 h-10" />
+                <h1 className="text-white origin-left font-medium text-5xl duration-300">Admin</h1>
+            </div>
+            <div className="bg-Lime_Green flex gap-x-4 items-center">
+                <ul>
+                    {Menus.map((MenuInfo) =>
+                        <li>
+                            <img src={MenuInfo.icon} className="w-10 h-10" />
+                            <a href={MenuInfo.href}>
+                                {MenuInfo.title}
+                            </a>
+                        </li>)
+                    }
+                </ul>
+            </div>
         </div>
     );
 };
